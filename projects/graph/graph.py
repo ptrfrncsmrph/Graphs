@@ -14,13 +14,13 @@ class Graph:
         """
         Add a vertex to the graph.
         """
-        self[vertex] = set()
+        self.vertices[vertex] = set()
 
     def add_edge(self, v1, v2):
         """
         Add a directed edge to the graph.
         """
-        if v1 in vertices and v2 in vertices:
+        if v1 in self.vertices and v2 in self.vertices:
             self.vertices[v1].add(v2)
         else:
             raise IndexError("That vertex does not exist")
@@ -54,8 +54,8 @@ class Graph:
             if v not in visited:
                 visited.add(v)
                 print(v)
-                for neighbor in self.vertices[v]
-                s.push(neighbor)
+                for neighbor in self.vertices[v]:
+                    s.push(neighbor)
 
     def dft_recursive(self, starting_vertex):
         """
