@@ -63,7 +63,14 @@ class Graph:
         beginning from starting_vertex.
         This should be done using recursion.
         """
-        pass  # TODO
+        def go(starting_vertex, acc):
+            if starting_vertex in acc:
+                return
+            print(starting_vertex)
+            for neighbor in self.vertices[starting_vertex]:
+                acc.add(starting_vertex)
+                go(neighbor, acc)
+        go(starting_vertex, set())
 
     def bfs(self, starting_vertex, destination_vertex):
         """
